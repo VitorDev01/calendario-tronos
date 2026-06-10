@@ -13,39 +13,25 @@
         <p class="subtitulo">Calendário De Regências - 12 Tronos Caídos</p>
         
         <div class="mes-atual" id="mesAtual">Junho 2026</div>
-        
         <div id="calendar">
-            <!-- Calendário gerado pelo JS -->
-        </div>
+    <!-- Calendário gerado pelo JS -->
+</div>
 
-        <div class="botoes">
-            <button id="btnAtual">👑 Analisar Regência Atual</button>
-            <button id="btnData">📅 Ver Regência de Outra Data</button>
-        </div>
+<div id="regenciaAtual" class="regencia-atual">
+    👑 Regência Atual:
+    <strong id="textoRegencia">Carregando...</strong>
+</div>
 
-        <div id="seletorData" style="display:none; margin-top:20px; text-align:center;">
-            <input type="date" id="dataEscolhida">
-            <button id="consultarData">Consultar</button>
-        </div>
+<div class="botoes">
+    <button id="btnAtual">👑 Analisar Regência Atual</button>
+    <button id="btnData">📅 Ver Regência de Outra Data</button>
+</div>
 
-        <div class="resultado">
-            <div class="imagem-box">
-                <img src="img/gemeos.jpg" alt="Regência Atual" id="imgRegencia">
-            </div>
-            <div class="dados">
-                <h2 id="signoTitulo">♊ GÊMEOS</h2>
-                <div class="info"><strong>Elemento:</strong> <span id="elemento">Ar</span></div>
-                <div class="info"><strong>Qualidade:</strong> <span id="qualidade">Mutável</span></div>
-                <div class="trono" id="trono">👑 ATENA</div>
-                <div class="descricao" id="descricao">A Soberba e a Estratégia</div>
-                
-                <div class="contador">
-                    <h3>Próxima mudança de regência</h3>
-                    <p id="contador">12 dias • 08 horas • 41 minutos</p>
-                </div>
-            </div>
+<div id="seletorData" style="display:none; margin-top:20px; text-align:center;">
+    <input type="date" id="dataEscolhida">
+    <button id="consultarData">Consultar</button>
+</div>
         </div>
-    </div>
 
     <script src="script.js"></script>
 </body>
