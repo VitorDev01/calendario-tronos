@@ -123,10 +123,13 @@ document.getElementById("consultarData").addEventListener("click", () => {
 });
 // ==================== DADOS LILITH ====================
 const horariosLilith = {
-    "Domingo": ["04:00", "09:00", "11:00"],
-    "Segunda": ["01:00", "06:00", "14:00", "19:00"],
-    "Sexta":   ["03:00", "08:00", "17:00", "22:00"],
-    "Sábado":  ["00:00", "14:00", "19:00"]
+    "Domingo":  ["04:00", "09:00", "11:00"],
+    "Segunda":  ["01:00", "06:00", "14:00", "19:00"],
+    "Terça":    ["10:00", "17:00", "23:00", "05:00"],
+    "Quarta":   ["08:00", "15:00", "21:00"],
+    "Quinta":   ["11:00", "18:00", "07:00"],
+    "Sexta":    ["03:00", "08:00", "17:00", "22:00"],
+    "Sábado":   ["00:00", "14:00", "19:00"]
 };
 
 function gerarHorariosLilith() {
@@ -148,10 +151,26 @@ function gerarHorariosLilith() {
         container.appendChild(div);
     });
 }
+
+function mostrarLilithHoje() {
+    const hoje = new Date();
+    const diasSemana = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
+    const diaNome = diasSemana[hoje.getDay()];
+
+    const horarios = horariosLilith[diaNome] || [];
+
+    const containerHoje = document.getElementById("lilithHoje");
+    
+    if (horarios.length > 0) {
+        const horariosTexto = horarios.join(" • ");
+        containerHoje.innerHTML = `
+            <strong>Hoje (${diaNome}):</strong> ${horariosTexto}
+        `;
+    } else {
+        containerHoje.innerHTML = `<strong>Hoje (${diaNome}):</strong> Sem horários registrados`;
+    }
+}
 // Inicialização
 gerarCalendario();
-analisarAtual();
-
-// ==================== INICIALIZAÇÃO ====================
-gerarCalendario();
-gerarHorariosLilith();   // ← Nova linha
+gerarHorariosLilith();
+mostrarLilithHoje();
