@@ -368,3 +368,58 @@ button:hover {
 .lilith-hoje strong {
     color: #f472b6;
 }
+
+/* ====================== MARCADORES DO CALENDÁRIO ====================== */
+
+/* SEGUNDAS-FEIRAS - Laranja Claro + Portal */
+.dia-segunda {
+    background: #ffe4b3 !important;     /* Laranja claro */
+    color: #111 !important;
+    font-weight: bold;
+    border: 2px solid #ff8c00 !important;
+    position: relative;
+}
+
+.dia-segunda::after {
+    content: "🌀";
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 13px;
+}
+
+/* SEXTAS-FEIRAS - Portal 03:00 AM */
+.dia-sexta {
+    background: #e0f7fa !important;     /* Azul claro suave */
+    color: #111 !important;
+    font-weight: bold;
+    border: 2px solid #00b7eb !important;
+    position: relative;
+}
+
+.dia-sexta::after {
+    content: "03:00 🌀";
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+/* SÁBADOS - Vermelho Claro + 00:00 Portal */
+.dia-sabado {
+    background: #ffcdd2 !important;     /* Vermelho claro */
+    color: #111 !important;
+    font-weight: bold;
+    border: 2px solid #ef5350 !important;
+    position: relative;
+}
+
+.dia-sabado::after {
+    content: "00:00 🌀";
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 11px;
+    font-weight: normal;
+}
