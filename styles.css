@@ -51,7 +51,7 @@ body::before {
 .regencia-atual,
 .botoes,
 #seletorData {
-    width: 100%;
+    width: 90%;
 }
 .titulo {
     text-align: center;
