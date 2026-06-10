@@ -48,6 +48,7 @@ function gerarCalendario() {
     const hoje = new Date();
     const ano = hoje.getFullYear();
     const mes = hoje.getMonth();
+    const diaAtual = hoje.getDate();   // ← Novo: pega o dia de hoje
 
     const primeiroDia = new Date(ano, mes, 1).getDay();
     const ultimoDia = new Date(ano, mes + 1, 0).getDate();
@@ -69,20 +70,22 @@ function gerarCalendario() {
     }
 
     for (let dia = 1; dia <= ultimoDia; dia++) {
-        const dataAtual = new Date(ano, mes, dia);
-        if (dataAtual.getDay() === 0 && dia !== 1) {
+        if ((dia + primeiroDia - 1) % 7 === 0 && dia !== 1) {
             html += "</tr><tr>";
         }
 
         let classe = "";
         const ehRegencia = datasRegencia.some(r => r.mes === mes + 1 && r.dia === dia);
         const ehOrgulho = (mes + 1) === 6 && dia === 28;
+        const ehHoje = (dia === diaAtual);   // ← Nova verificação
 
         if (ehRegencia) classe += " dia-regencia";
         if (ehOrgulho) classe += " dia-evento";
+        if (ehHoje) classe += " dia-atual";   // ← Adiciona classe verde
 
         html += `
-            <td class="${classe}" title="${ehRegencia ? 'Início de nova Regência' : ehOrgulho ? 'Dia do Orgulho LGBTQIA+' : ''}">
+            <td class="${classe}" 
+                title="${ehHoje ? 'Hoje' : ''}${ehRegencia ? ' | Início de nova Regência' : ''}${ehOrgulho ? ' | Dia do Orgulho' : ''}">
                 ${dia}
             </td>
         `;
@@ -90,11 +93,12 @@ function gerarCalendario() {
 
     html += "</tr></table>";
 
-    // Legenda
+    // Legenda atualizada
     html += `
-        <div style="margin-top: 20px; padding: 15px; border-top: 1px solid #d4af37; font-size: 0.95rem;">
+        <div style="margin-top: 20px; padding: 15px; border-top: 1px solid #d4af37; font-size: 0.95rem; display:flex; flex-wrap:wrap; gap:15px; justify-content:center;">
+            <div><span style="color:#228b22;">📍</span> Hoje</div>
             <div>👑 Início de Regência</div>
-            <div style="margin-top: 5px;">🏳️‍🌈 Dia do Orgulho LGBTQIA+ (28 de Junho)</div>
+            <div>🏳️‍🌈 Dia do Orgulho LGBTQIA+ (28 de Junho)</div>
         </div>
     `;
 
