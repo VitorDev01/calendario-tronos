@@ -30,27 +30,9 @@ function obterRegencia(data) {
 
 function atualizarInfo(reg) {
 
-    document.getElementById("signoTitulo").textContent =
-        reg.signo.toUpperCase();
-
-    document.getElementById("elemento").textContent =
-        reg.elemento;
-
-    document.getElementById("qualidade").textContent =
-        reg.qualidade;
-
-    document.getElementById("trono").innerHTML =
-        `👑 ${reg.trono}`;
-
-    document.getElementById("descricao").textContent =
-        reg.descricao;
-
-    document.getElementById("imgRegencia").src =
-        reg.imagem;
-
-    // NOVA REGÊNCIA ABAIXO DO CALENDÁRIO
     document.getElementById("textoRegencia").textContent =
-        `${reg.trono} - ${reg.signo}`;
+        `${reg.trono} • ${reg.signo} (${reg.elemento})`;
+
 }
 
 function analisarAtual() {
