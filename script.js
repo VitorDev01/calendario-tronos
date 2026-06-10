@@ -1,16 +1,16 @@
 const regencias = [
-    { inicio: { mes: 1, dia: 20 }, signo: "Aquário", elemento: "Ar", qualidade: "Fixo", trono: "Urano", descricao: "O Despertar Caótico", imagem: "img/aquario.jpg" },
-    { inicio: { mes: 2, dia: 19 }, signo: "Peixes", elemento: "Água", qualidade: "Mutável", trono: "Netuno", descricao: "A Ilusão e a Desorientação", imagem: "img/peixes.jpg" },
-    { inicio: { mes: 3, dia: 21 }, signo: "Áries", elemento: "Fogo", qualidade: "Cardinal", trono: "Marte", descricao: "A Ira e a Guerra", imagem: "img/aries.jpg" },
-    { inicio: { mes: 4, dia: 21 }, signo: "Touro", elemento: "Terra", qualidade: "Fixo", trono: "Afrodite", descricao: "A Luxúria e o Desejo", imagem: "img/touro.jpg" },
-    { inicio: { mes: 5, dia: 22 }, signo: "Gêmeos", elemento: "Ar", qualidade: "Mutável", trono: "Atena", descricao: "A Soberba e a Estratégia", imagem: "img/gemeos.jpg" },
-    { inicio: { mes: 6, dia: 21 }, signo: "Câncer", elemento: "Água", qualidade: "Cardinal", trono: "Lilith", descricao: "A Rebelião e o Instinto", imagem: "img/cancer.jpg" },
-    { inicio: { mes: 7, dia: 23 }, signo: "Leão", elemento: "Fogo", qualidade: "Fixo", trono: "Apolo", descricao: "O Orgulho e a Vaidade", imagem: "img/apolo.jpg" },
-    { inicio: { mes: 8, dia: 22 }, signo: "Virgem", elemento: "Terra", qualidade: "Mutável", trono: "Mercúrio", descricao: "A Manipulação e o Engano", imagem: "img/virgem.jpg" },
-    { inicio: { mes: 9, dia: 23 }, signo: "Libra", elemento: "Ar", qualidade: "Cardinal", trono: "Têmis", descricao: "A Corrupção da Justiça", imagem: "img/libra.jpg" },
-    { inicio: { mes: 10, dia: 24 }, signo: "Escorpião", elemento: "Água", qualidade: "Fixo", trono: "Hades", descricao: "A Ambição e a Destruição", imagem: "img/escorpiao.jpg" },
-    { inicio: { mes: 11, dia: 21 }, signo: "Sagitário", elemento: "Fogo", qualidade: "Mutável", trono: "Zeus", descricao: "O Abuso do Poder", imagem: "img/sagitario.jpg" },
-    { inicio: { mes: 12, dia: 22 }, signo: "Capricórnio", elemento: "Terra", qualidade: "Cardinal", trono: "Saturno", descricao: "A Crueldade e o Controle", imagem: "img/capricornio.jpg" }
+    { inicio: { mes: 1, dia: 20 }, signo: "Aquário", elemento: "Ar", qualidade: "Fixo", trono: "Urano", descricao: "O Despertar Caótico", imagem: "aquario.jpg" },
+    { inicio: { mes: 2, dia: 19 }, signo: "Peixes", elemento: "Água", qualidade: "Mutável", trono: "Netuno", descricao: "A Ilusão e a Desorientação", imagem: "peixes.jpg" },
+    { inicio: { mes: 3, dia: 21 }, signo: "Áries", elemento: "Fogo", qualidade: "Cardinal", trono: "Marte", descricao: "A Ira e a Guerra", imagem: "aries.jpg" },
+    { inicio: { mes: 4, dia: 21 }, signo: "Touro", elemento: "Terra", qualidade: "Fixo", trono: "Afrodite", descricao: "A Luxúria e o Desejo", imagem: "touro.jpg" },
+    { inicio: { mes: 5, dia: 22 }, signo: "Gêmeos", elemento: "Ar", qualidade: "Mutável", trono: "Atena", descricao: "A Soberba e a Estratégia", imagem: "gemeos.jpg" },
+    { inicio: { mes: 6, dia: 21 }, signo: "Câncer", elemento: "Água", qualidade: "Cardinal", trono: "Lilith", descricao: "A Rebelião e o Instinto", imagem: "cancer.jpg" },
+    { inicio: { mes: 7, dia: 23 }, signo: "Leão", elemento: "Fogo", qualidade: "Fixo", trono: "Apolo", descricao: "O Orgulho e a Vaidade", imagem: "apolo.jpg" },
+    { inicio: { mes: 8, dia: 22 }, signo: "Virgem", elemento: "Terra", qualidade: "Mutável", trono: "Mercúrio", descricao: "A Manipulação e o Engano", imagem: "virgem.jpg" },
+    { inicio: { mes: 9, dia: 23 }, signo: "Libra", elemento: "Ar", qualidade: "Cardinal", trono: "Têmis", descricao: "A Corrupção da Justiça", imagem: "libra.jpg" },
+    { inicio: { mes: 10, dia: 24 }, signo: "Escorpião", elemento: "Água", qualidade: "Fixo", trono: "Hades", descricao: "A Ambição e a Destruição", imagem: "escorpiao.jpg" },
+    { inicio: { mes: 11, dia: 21 }, signo: "Sagitário", elemento: "Fogo", qualidade: "Mutável", trono: "Zeus", descricao: "O Abuso do Poder", imagem: "sagitario.jpg" },
+    { inicio: { mes: 12, dia: 22 }, signo: "Capricórnio", elemento: "Terra", qualidade: "Cardinal", trono: "Saturno", descricao: "A Crueldade e o Controle", imagem: "capricornio.jpg" }
 ];
 
 const datasRegencia = regencias.map(r => r.inicio);
