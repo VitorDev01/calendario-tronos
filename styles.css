@@ -351,3 +351,20 @@ button:hover {
     border-radius: 6px;
     font-family: monospace;
 }
+
+/* LINHA ÚNICA - HOJE LILITH */
+.lilith-hoje {
+    margin: 20px 0;
+    padding: 16px 20px;
+    background: linear-gradient(90deg, #4c1d95, #7e22ce);
+    border: 2px solid #c026d3;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+    font-size: 1.1rem;
+    box-shadow: 0 0 15px rgba(192, 38, 211, .4);
+}
+
+.lilith-hoje strong {
+    color: #f472b6;
+}
