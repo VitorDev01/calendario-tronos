@@ -1,4 +1,4 @@
-no celular tem um espaço grande em cima de gemesos e mmbaixo da foto como encurtar isso * {
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -110,6 +110,23 @@ body::before {
     right: 2px;
     font-size: 12px;
 }
+
+.regencia-atual{
+    margin-top:15px;
+    padding:12px;
+    text-align:center;
+    background:rgba(9,20,45,.95);
+    border:2px solid #d4af37;
+    border-radius:12px;
+    color:#fff;
+    font-size:1.1rem;
+    box-shadow:0 0 15px rgba(212,175,55,.2);
+}
+
+.regencia-atual strong{
+    color:#ffd76b;
+}
+
 .botoes {
     display: flex;
     justify-content: center;
@@ -143,11 +160,13 @@ button:hover {
     overflow: hidden;
     box-shadow: 0 0 25px rgba(212,175,55,.15);
 }
+
 .imagem-box {
     width: 450px;
-    min-height: 500px;
+    height: 500px;
     overflow: hidden;
 }
+
 .imagem-box img {
     width: 100%;
     height: 100%;
@@ -219,15 +238,32 @@ button:hover {
     font-size: 12px;
 }
 
-/* Responsivo */
 @media (max-width: 900px) {
-    .resultado { flex-direction: column; }
-    .imagem-box { width: 100%; min-height: 300px; }
-    .titulo { font-size: 2rem; }
-    .dados h2 { font-size: 2rem; }
-    .trono { font-size: 1.7rem; }
-}
-@media (max-width: 600px) {
-    #calendar { padding: 10px; }
-    .container { padding: 15px; }
+
+    .resultado {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .imagem-box {
+        width: 100%;
+        height: 220px;
+        min-height: auto;
+    }
+
+    .dados {
+        padding: 15px;
+    }
+
+    .dados h2 {
+        margin-bottom: 10px;
+    }
+
+    .titulo {
+        font-size: 2rem;
+    }
+
+    .trono {
+        font-size: 1.7rem;
+    }
 }
