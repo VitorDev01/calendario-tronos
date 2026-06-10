@@ -36,11 +36,22 @@ body::before {
     from { transform: translateY(0); }
     to { transform: translateY(-1000px); }
 }
+
 .container {
     width: 95%;
     max-width: 1400px;
-    margin: auto;
-    padding: 30px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#calendar,
+.regencia-atual,
+.botoes,
+#seletorData {
+    width: 100%;
 }
 .titulo {
     text-align: center;
@@ -237,6 +248,54 @@ button:hover {
     left: 2px;
     font-size: 12px;
 }
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .titulo {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .subtitulo {
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    .mes-atual {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    #calendar {
+        padding: 8px;
+    }
+
+    #calendar th,
+    #calendar td {
+        padding: 8px 2px;
+        font-size: 0.9rem;
+    }
+
+    .regencia-atual {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .botoes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .botoes button {
+        width: 100%;
+        max-width: 320px;
+    }
+} 
 
 @media (max-width: 900px) {
 
