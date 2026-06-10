@@ -1,9 +1,8 @@
-* {
+no celular tem um espaço grande em cima de gemesos e mmbaixo da foto como encurtar isso * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     background: radial-gradient(circle at 20% 20%, rgba(60,80,180,.25), transparent 30%),
                 radial-gradient(circle at 80% 40%, rgba(120,40,180,.20), transparent 30%),
@@ -15,7 +14,6 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
 }
-
 /* ESTRELAS */
 body::before {
     content: "";
@@ -34,65 +32,93 @@ body::before {
     animation: starsMove 180s linear infinite;
     pointer-events: none;
 }
-
 @keyframes starsMove {
     from { transform: translateY(0); }
     to { transform: translateY(-1000px); }
 }
-
 .container {
     width: 95%;
     max-width: 1400px;
     margin: auto;
-    padding: 20px 15px;           /* Reduzido */
+    padding: 30px;
 }
-
 .titulo {
     text-align: center;
     color: #d4af37;
-    font-size: 2.4rem;
-    margin-bottom: 8px;
+    font-size: 3rem;
+    margin-bottom: 10px;
     text-shadow: 0 0 10px rgba(212,175,55,.5), 0 0 20px rgba(212,175,55,.3);
 }
-
 .subtitulo {
     text-align: center;
     color: #d9c78c;
     font-size: 1rem;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
-
 .mes-atual {
     text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 18px;
+    font-size: 2rem;
+    margin-bottom: 20px;
     color: white;
     text-shadow: 0 0 10px rgba(255,255,255,.3);
 }
-
 #calendar {
     background: rgba(255,255,255,.95);
     color: #111;
     border: 2px solid #d4af37;
     border-radius: 20px;
-    padding: 18px;
+    padding: 25px;
     box-shadow: 0 0 20px rgba(212,175,55,.35), 0 0 50px rgba(212,175,55,.15);
     backdrop-filter: blur(8px);
     overflow-x: auto;
 }
-
-/* ... (mantive o resto do calendário igual) */
-
+#calendar table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+#calendar th, #calendar td {
+    padding: 12px 4px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+#calendar td:hover {
+    background: #e8d39a;
+}
+.dia-regencia {
+    position: relative;
+    border: 2px solid #d4af37 !important;
+    font-weight: bold;
+    background: #fff9e6;
+}
+.dia-regencia::after {
+    content: "👑";
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 12px;
+}
+.dia-evento {
+    position: relative;
+    border: 2px solid #ff4da6 !important;
+    font-weight: bold;
+}
+.dia-evento::after {
+    content: "🏳️‍🌈";
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 12px;
+}
 .botoes {
     display: flex;
     justify-content: center;
-    gap: 12px;
-    margin-top: 20px;
+    gap: 15px;
+    margin-top: 25px;
     flex-wrap: wrap;
 }
-
 button {
-    padding: 14px 22px;
+    padding: 15px 25px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -102,101 +128,87 @@ button {
     color: #111;
     transition: .3s;
 }
-
-/* === RESULTADO - PRINCIPAL AJUSTE === */
+button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 15px rgba(212,175,55,.6);
+}
+/* Resultado */
 .resultado {
-    margin-top: 15px;           /* Reduzido */
+    margin-top: 20px;
     display: flex;
-    gap: 20px;
+    gap: 30px;
     background: rgba(9,20,45,.95);
     border: 2px solid #d4af37;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 0 25px rgba(212,175,55,.15);
 }
-
 .imagem-box {
     width: 450px;
-    min-height: 380px;          /* Reduzido */
+    min-height: 500px;
     overflow: hidden;
 }
-
 .imagem-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: .5s;
 }
-
+.imagem-box:hover img {
+    transform: scale(1.03);
+}
 .dados {
     flex: 1;
-    padding: 25px 20px;         /* Reduzido significativamente */
+    padding: 35px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
 .dados h2 {
-    font-size: 2.6rem;
+    font-size: 3rem;
     color: #d4af37;
-    margin-bottom: 6px;
+    margin-bottom: 2px;
     text-shadow: 0 0 10px rgba(212,175,55,.4);
 }
-
 .info {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
+    font-size: 1.15rem;
+    margin-bottom: 12px;
 }
-
+.info strong {
+    color: #d4af37;
+}
 .trono {
-    margin-top: 18px;
-    font-size: 2rem;
+    margin-top: 25px;
+    font-size: 2.2rem;
     color: #ffd76b;
+    text-shadow: 0 0 10px rgba(255,215,107,.4);
 }
-
 .descricao {
-    margin-top: 8px;
-    font-size: 1.25rem;
+    margin-top: 10px;
+    font-size: 1.3rem;
     color: #e8cf7b;
-    line-height: 1.5;
+    line-height: 1.6;
 }
-
 .contador {
-    margin-top: 18px;
-    padding: 12px;
+    margin-top: 20px;
+    padding: 15px;
     border-left: 4px solid #d4af37;
     background: #13244d;
     border-radius: 5px;
 }
-
-/* ==================== RESPONSIVO ==================== */
-@media (max-width: 900px) {
-    .resultado { 
-        flex-direction: column; 
-    }
-    .imagem-box { 
-        width: 100%; 
-        min-height: 320px;     /* Ajustado para mobile */
-    }
-    .titulo { font-size: 2.1rem; }
-    .dados h2 { font-size: 2.3rem; }
-    .trono { font-size: 1.8rem; }
-    .dados {
-        padding: 22px 18px;    /* Ainda menor no mobile */
-    }
+.contador h3 {
+    margin-bottom: 2px;
+    color: #d4af37;
 }
-
+/* Responsivo */
+@media (max-width: 900px) {
+    .resultado { flex-direction: column; }
+    .imagem-box { width: 100%; min-height: 300px; }
+    .titulo { font-size: 2rem; }
+    .dados h2 { font-size: 2rem; }
+    .trono { font-size: 1.7rem; }
+}
 @media (max-width: 600px) {
-    .container {
-        padding: 12px 10px;    /* Muito importante para mobile */
-    }
-    #calendar { 
-        padding: 12px; 
-    }
-    .imagem-box {
-        min-height: 280px;
-    }
-    .dados {
-        padding: 20px 15px;
-    }
+    #calendar { padding: 10px; }
+    .container { padding: 15px; }
 }
