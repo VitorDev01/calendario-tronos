@@ -46,7 +46,7 @@ function gerarCalendario() {
     const hoje = new Date();
     const ano = hoje.getFullYear();
     const mes = hoje.getMonth();
-    const diaAtual = hoje.getDate();   // ← Novo: pega o dia de hoje
+    const diaAtual = hoje.getDate();
 
     const primeiroDia = new Date(ano, mes, 1).getDay();
     const ultimoDia = new Date(ano, mes + 1, 0).getDate();
@@ -62,12 +62,12 @@ function gerarCalendario() {
             <tr>
     `;
 
-    // Dias vazios antes do primeiro dia
     for (let i = 0; i < primeiroDia; i++) {
         html += "<td></td>";
     }
 
     for (let dia = 1; dia <= ultimoDia; dia++) {
+        // Quebra de linha no domingo
         if ((dia + primeiroDia - 1) % 7 === 0 && dia !== 1) {
             html += "</tr><tr>";
         }
@@ -75,15 +75,22 @@ function gerarCalendario() {
         let classe = "";
         const ehRegencia = datasRegencia.some(r => r.mes === mes + 1 && r.dia === dia);
         const ehOrgulho = (mes + 1) === 6 && dia === 28;
-        const ehHoje = (dia === diaAtual);   // ← Nova verificação
+        const ehHoje = (dia === diaAtual);
+
+        // === NOVAS REGRAS POR DIA DA SEMANA ===
+        const diaDaSemana = (dia + primeiroDia - 1) % 7; // 0=Dom, 1=Seg, ..., 6=Sáb
+
+        if (diaDaSemana === 1) classe += " dia-segunda";      // Segunda-feira
+        if (diaDaSemana === 5) classe += " dia-sexta";        // Sexta-feira
+        if (diaDaSemana === 6) classe += " dia-sabado";       // Sábado
 
         if (ehRegencia) classe += " dia-regencia";
         if (ehOrgulho) classe += " dia-evento";
-        if (ehHoje) classe += " dia-atual";   // ← Adiciona classe verde
+        if (ehHoje) classe += " dia-atual";
 
         html += `
-            <td class="${classe}" 
-                title="${ehHoje ? 'Hoje' : ''}${ehRegencia ? ' | Início de nova Regência' : ''}${ehOrgulho ? ' | Dia do Orgulho' : ''}">
+            <td class="${classe.trim()}" 
+                title="${ehHoje ? 'Hoje ' : ''}${ehRegencia ? 'Início de Regência ' : ''}${ehOrgulho ? 'Dia do Orgulho ' : ''}">
                 ${dia}
             </td>
         `;
@@ -93,10 +100,12 @@ function gerarCalendario() {
 
     // Legenda atualizada
     html += `
-        <div style="margin-top: 20px; padding: 15px; border-top: 1px solid #d4af37; font-size: 0.95rem; display:flex; flex-wrap:wrap; gap:15px; justify-content:center;">
-            <div><span style="color:#228b22;">📍</span> Hoje</div>
+        <div style="margin-top: 20px; padding: 15px; border-top: 1px solid #d4af37; font-size: 0.95rem; display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+            <div><span style="color:#ff8c00;">🌀</span> Segundas - Portal</div>
+            <div><span style="color:#00b7eb;">03:00 🌀</span> Sextas - Portal</div>
+            <div><span style="color:#ef5350;">00:00 🌀</span> Sábados - Portal</div>
             <div>👑 Início de Regência</div>
-            <div>🏳️‍🌈 Dia do Orgulho LGBTQIA+ (28 de Junho)</div>
+            <div>🏳️‍🌈 Dia do Orgulho</div>
         </div>
     `;
 
