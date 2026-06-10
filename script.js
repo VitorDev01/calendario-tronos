@@ -151,7 +151,7 @@ function gerarHorariosLilith() {
 
 function mostrarLilithHoje() {
     const hoje = new Date();
-    const diasSemana = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
+    const diasSemana = ["Domingo", "Segunda", "Sexta", "Sábado"];
     const diaNome = diasSemana[hoje.getDay()];
 
     const horarios = horariosLilith[diaNome] || [];
@@ -169,5 +169,4 @@ function mostrarLilithHoje() {
 }
 // Inicialização
 gerarCalendario();
-gerarHorariosLilith();
 mostrarLilithHoje();
