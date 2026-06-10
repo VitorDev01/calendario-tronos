@@ -121,7 +121,40 @@ document.getElementById("consultarData").addEventListener("click", () => {
     const reg = obterRegencia(data);
     atualizarInfo(reg);
 });
+// ==================== DADOS LILITH ====================
+const horariosLilith = {
+    "Domingo": ["06:00", "09:00", "13:00", "16:00"],
+    "Segunda": ["07:00", "14:00", "20:00"],
+    "Terça":   ["10:00", "17:00", "23:00"],
+    "Quarta":  ["08:00", "15:00", "21:00"],
+    "Quinta":  ["11:00", "18:00"],
+    "Sexta":   ["09:00", "16:00", "22:00"],
+    "Sábado":  ["12:00", "19:00"]
+};
 
+function gerarHorariosLilith() {
+    const container = document.getElementById("lilithHorarios");
+    container.innerHTML = "";
+
+    Object.keys(horariosLilith).forEach(dia => {
+        const div = document.createElement("div");
+        div.className = "dia-lilith";
+        
+        let horariosHTML = horariosLilith[dia].map(h => 
+            `<span class="horario">${h}</span>`
+        ).join("");
+
+        div.innerHTML = `
+            <div class="dia-nome">${dia}</div>
+            <div class="horarios">${horariosHTML}</div>
+        `;
+        container.appendChild(div);
+    });
+}
 // Inicialização
 gerarCalendario();
 analisarAtual();
+
+// ==================== INICIALIZAÇÃO ====================
+gerarCalendario();
+gerarHorariosLilith();   // ← Nova linha
