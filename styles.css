@@ -200,6 +200,25 @@ button:hover {
     margin-bottom: 2px;
     color: #d4af37;
 }
+
+/* DIA ATUAL (VERDE) */
+.dia-atual {
+    position: relative;
+    background: #90ee90 !important;     /* Verde claro */
+    color: #111 !important;
+    font-weight: bold;
+    border: 2px solid #228b22 !important; /* Verde escuro */
+    box-shadow: 0 0 8px rgba(34, 139, 34, 0.6);
+}
+
+.dia-atual::after {
+    content: "📍";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    font-size: 12px;
+}
+
 /* Responsivo */
 @media (max-width: 900px) {
     .resultado { flex-direction: column; }
